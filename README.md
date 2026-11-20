@@ -173,5 +173,6 @@ NVCC_PREPEND_FLAGS="-DFLASH_ATTENTION_VERSION=2" make build
 - [V2 Warp 并行版](docs/attention/V2.md)
 - [V3 最终版](docs/attention/V3.md)
 - [优化总览与实测数据](docs/attention/ATTENTION_OPTIMIZATION.md)
+- [三版本合并中文报告](docs/attention/REPORT_CN.md)
 
 每版的官方测试日志、Nsight Compute 和 Nsight Systems 报告在 `reports/attention/v1|v2|v3/`。
