@@ -7,11 +7,14 @@
 
 #define BLOCK_SIZE 256
 
+
 __device__ __forceinline__ float to_float(float x) { return x; }
 __device__ __forceinline__ float to_float(half x) { return __half2float(x); }
 
 __device__ __forceinline__ void from_float(float &dst, float v) { dst = v; }
 __device__ __forceinline__ void from_float(half &dst, float v) { dst = __float2half_rn(v); }
+
+#include "flash_attention.cuh"
 
 // 通用兜底版本：不缓存 x，适用于任意 D
 template <typename T>
@@ -249,7 +252,9 @@ void flashAttention(const std::vector<T> &h_q, const std::vector<T> &h_k,
                     const std::vector<T> &h_v, std::vector<T> &h_o,
                     int batch_size, int target_seq_len, int src_seq_len,
                     int query_heads, int kv_heads, int head_dim, bool is_causal) {
-  // TODO: Implement the flash attention function
+  flashAttentionImpl<T>(h_q, h_k, h_v, h_o, batch_size, target_seq_len,
+                        src_seq_len, query_heads, kv_heads, head_dim,
+                        is_causal);
 }
 
 // *********************************************************************

@@ -1,0 +1,4 @@
+test_kernels
+bench
+src/*.o
+tester/*.o

@@ -1,0 +1,106 @@
+[20767] bench_attn_v1@127.0.0.1
+  void flash_attention_v1_kernel<float>(const T1 *, const T1 *, const T1 *, T1 *, int, int, int, int, int, bool, float) (512, 64, 4)x(256, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- --------------
+    Metric Name             Metric Unit   Metric Value
+    ----------------------- ----------- --------------
+    DRAM Frequency                  Ghz           9.24
+    SM Frequency                    Ghz           1.44
+    Elapsed Cycles                cycle    206,783,774
+    Memory Throughput                 %          39.78
+    DRAM Throughput                   %           0.07
+    Duration                         ms         143.60
+    L1/TEX Cache Throughput           %          39.87
+    L2 Cache Throughput               %           1.54
+    SM Active Cycles              cycle 206,083,554.79
+    Compute (SM) Throughput           %          39.78
+    ----------------------- ----------- --------------
+
+    OPT   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+          of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+          latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Memory Workload Analysis
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    Memory Throughput               Mbyte/s       482.54
+    Mem Busy                              %        19.90
+    Max Bandwidth                         %        39.78
+    L1/TEX Hit Rate                       %        94.74
+    L2 Compression Success Rate           %            0
+    L2 Compression Ratio                               0
+    L2 Hit Rate                           %        98.63
+    Mem Pipes Busy                        %        39.78
+    --------------------------- ----------- ------------
+
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle        48.72
+    Warp Cycles Per Executed Instruction           cycle        48.72
+    Avg. Active Threads Per Warp                                 1.90
+    Avg. Not Predicated Off Threads Per Warp                     1.85
+    ---------------------------------------- ----------- ------------
+
+    WRN   The optional metric smsp__pcsamp_sample_count could not be found. Collecting it as an additional metric could 
+          enable the rule to provide more guidance.                                                                     
+    ----- --------------------------------------------------------------------------------------------------------------
+    OPT   Est. Local Speedup: 87.14%                                                                                    
+          On average, each warp of this kernel spends 42.5 cycles being stalled waiting for sibling warps at a CTA      
+          barrier. A high number of warps waiting at a barrier is commonly caused by diverging code paths before a      
+          barrier. This causes some warps to wait a long time until other warps reach the synchronization point.        
+          Whenever possible, try to divide up the work into blocks of uniform workloads. If the block size is 512       
+          threads or greater, consider splitting it into smaller groups. This can increase eligible warps without       
+          affecting occupancy, unless shared memory becomes a new occupancy limiter. Also, try to identify which        
+          barrier instruction causes the most stalls, and optimize the code executed before that synchronization point  
+          first. This stall type represents about 87.1% of the total average of 48.7 cycles between issuing two         
+          instructions.                                                                                                 
+    ----- --------------------------------------------------------------------------------------------------------------
+    INF   Check the Warp Stall Sampling (All Samples) table for the top stall locations in your source based on         
+          sampling data. The Kernel Profiling Guide                                                                     
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-reference) provides more details    
+          on each stall reason.                                                                                         
+    ----- --------------------------------------------------------------------------------------------------------------
+    OPT   Est. Speedup: 37.48%                                                                                          
+          Instructions are executed in warps, which are groups of 32 threads. Optimal instruction throughput is         
+          achieved if all 32 threads of a warp execute the same instruction. The chosen launch configuration, early     
+          thread completion, and divergent flow control can significantly lower the number of active threads in a warp  
+          per cycle. This kernel achieves an average of 1.9 threads being active per cycle. This is further reduced to  
+          1.9 threads per warp due to predication. The compiler may use predication to avoid an actual branch.          
+          Instead, all instructions are scheduled, but a per-thread condition code or predicate controls which threads  
+          execute the instructions. Try to avoid different execution paths within a warp when possible.                 
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                131,072
+    Registers Per Thread             register/thread              44
+    Shared Memory Configuration Size           Kbyte           65.54
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            9.34
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM              68
+    Threads                                   thread      33,554,432
+    Uses Green Context                                             0
+    Waves Per SM                                              385.51
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            5
+    Block Limit Shared Mem                block            6
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           40
+    Theoretical Occupancy                     %        83.33
+    Achieved Occupancy                        %        81.56
+    Achieved Active Warps Per SM           warp        39.15
+    ------------------------------- ----------- ------------
+

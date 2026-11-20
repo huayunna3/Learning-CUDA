@@ -1,0 +1,10 @@
+Generating SQLite file /tmp/nsys_v1.sqlite from /tmp/nsys_v1.nsys-rep
+Processing [/tmp/nsys_v1.sqlite] with [/opt/nvidia/nsight-systems/2026.6.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+100.0,658953383,6,109825563.8,105385473.0,105238254,121636458,7191250.6,"void flash_attention_v1_kernel<float>(const T1 *, const T1 *, const T1 *, T1 *, int, int, int, int, int, bool, float)"
+
+Processing [/tmp/nsys_v1.sqlite] with [/opt/nvidia/nsight-systems/2026.6.1/target-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+90.6,188982942,18,10499052.3,14261907.0,3492132,14431703,5164478.8,[CUDA memcpy Host-to-Device]
+9.4,19628283,6,3271380.5,3384417.0,2389550,3680359,447540.7,[CUDA memcpy Device-to-Host]
+
