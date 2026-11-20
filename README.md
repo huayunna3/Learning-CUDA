@@ -144,3 +144,34 @@ make PLATFORM=moore
 ## 有疑问？
 
 可以在群里直接询问助教。
+
+## FlashAttention 实现说明
+
+第二题实现了三个可独立编译的版本，默认使用 V3：
+
+| 版本 | 文件 | 设计 | 28 项测试 |
+|---|---|---|---|
+| V1 | `src/flash_attention_v1.cuh` | 一行一 block，单线程算 score，正确性基线 | 28/28 |
+| V2 | `src/flash_attention_v2.cuh` | 一 warp 一行，K/V 分块，lane 并行 key | 28/28 |
+| V3 | `src/flash_attention_v3.cuh` | block 复用 Q/K/V/P，并行 exp + 严格顺序求和 | 28/28 |
+
+版本选择：
+
+```cpp
+#define FLASH_ATTENTION_VERSION 3  // 1, 2, or 3
+```
+
+也可以在编译命令中覆盖：
+
+```bash
+NVCC_PREPEND_FLAGS="-DFLASH_ATTENTION_VERSION=2" make build
+```
+
+详细说明：
+
+- [V1 正确性基线](docs/attention/V1.md)
+- [V2 Warp 并行版](docs/attention/V2.md)
+- [V3 最终版](docs/attention/V3.md)
+- [优化总览与实测数据](docs/attention/ATTENTION_OPTIMIZATION.md)
+
+每版的官方测试日志、Nsight Compute 和 Nsight Systems 报告在 `reports/attention/v1|v2|v3/`。

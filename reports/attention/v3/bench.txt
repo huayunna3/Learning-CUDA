@@ -1,0 +1,1 @@
+shape=B4 T512 S2048 Hq64 Hkv64 D32 causal=1 iters=3 avg_ms=64.143295 checksum=0.261719

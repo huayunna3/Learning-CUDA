@@ -4,7 +4,7 @@
 
 // 1 = correctness baseline, 2 = warp-parallel tiled, 3 = shared-memory final.
 #ifndef FLASH_ATTENTION_VERSION
-#define FLASH_ATTENTION_VERSION 2
+#define FLASH_ATTENTION_VERSION 3
 #endif
 
 #if FLASH_ATTENTION_VERSION == 1

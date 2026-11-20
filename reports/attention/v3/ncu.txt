@@ -1,0 +1,99 @@
+[24176] bench_attn_v3@127.0.0.1
+  void flash_attention_v3_kernel<float, 4, 32>(const T1 *, const T1 *, const T1 *, T1 *, int, int, int, int, int, bool, float) (128, 64, 4)x(128, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- -------------
+    Metric Name             Metric Unit  Metric Value
+    ----------------------- ----------- -------------
+    DRAM Frequency                  Ghz          9.24
+    SM Frequency                    Ghz          1.44
+    Elapsed Cycles                cycle    21,370,530
+    Memory Throughput                 %         92.63
+    DRAM Throughput                   %          0.62
+    Duration                         ms         14.84
+    L1/TEX Cache Throughput           %         93.41
+    L2 Cache Throughput               %         25.76
+    SM Active Cycles              cycle 21,186,608.65
+    Compute (SM) Throughput           %         38.89
+    ----------------------- ----------- -------------
+
+    INF   The kernel is utilizing greater than 80.0% of the available compute or memory performance of the device. To   
+          further improve performance, work will likely need to be shifted from the most utilized to another unit.      
+          Start by analyzing L1 in the Memory Workload Analysis section.                                                
+
+    Section: Memory Workload Analysis
+    --------------------------- ----------- ------------
+    Metric Name                 Metric Unit Metric Value
+    --------------------------- ----------- ------------
+    Memory Throughput               Gbyte/s         4.56
+    Mem Busy                              %        92.63
+    Max Bandwidth                         %        38.89
+    L1/TEX Hit Rate                       %        81.99
+    L2 Compression Success Rate           %            0
+    L2 Compression Ratio                               0
+    L2 Hit Rate                           %        99.53
+    Mem Pipes Busy                        %        38.89
+    --------------------------- ----------- ------------
+
+    Section: Warp State Statistics
+    ---------------------------------------- ----------- ------------
+    Metric Name                              Metric Unit Metric Value
+    ---------------------------------------- ----------- ------------
+    Warp Cycles Per Issued Instruction             cycle        36.87
+    Warp Cycles Per Executed Instruction           cycle        36.93
+    Avg. Active Threads Per Warp                                29.42
+    Avg. Not Predicated Off Threads Per Warp                    26.32
+    ---------------------------------------- ----------- ------------
+
+    WRN   The optional metric smsp__pcsamp_sample_count could not be found. Collecting it as an additional metric could 
+          enable the rule to provide more guidance.                                                                     
+    ----- --------------------------------------------------------------------------------------------------------------
+    OPT   Est. Local Speedup: 44.63%                                                                                    
+          On average, each warp of this kernel spends 16.5 cycles being stalled waiting for the MIO (memory             
+          input/output) instruction queue to be not full. This stall reason is high in cases of extreme utilization of  
+          the MIO pipelines, which include special math instructions, dynamic branches, as well as shared memory        
+          instructions. When caused by shared memory accesses, trying to use fewer but wider loads can reduce pipeline  
+          pressure. This stall type represents about 44.6% of the total average of 36.9 cycles between issuing two      
+          instructions.                                                                                                 
+    ----- --------------------------------------------------------------------------------------------------------------
+    INF   Check the Warp Stall Sampling (All Samples) table for the top stall locations in your source based on         
+          sampling data. The Kernel Profiling Guide                                                                     
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-reference) provides more details    
+          on each stall reason.                                                                                         
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   128
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                 32,768
+    Registers Per Thread             register/thread              56
+    Shared Memory Configuration Size           Kbyte          102.40
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            9.98
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM              68
+    Threads                                   thread       4,194,304
+    Uses Green Context                                             0
+    Waves Per SM                                               53.54
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            9
+    Block Limit Shared Mem                block            9
+    Block Limit Warps                     block           12
+    Theoretical Active Warps per SM        warp           36
+    Theoretical Occupancy                     %           75
+    Achieved Occupancy                        %        74.56
+    Achieved Active Warps Per SM           warp        35.79
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 25%                                                                                       
+          The 9.00 theoretical warps per scheduler this kernel can issue according to its occupancy are below the       
+          hardware maximum of 12. This kernel's theoretical occupancy (75.0%) is limited by the number of required      
+          registers. This kernel's theoretical occupancy (75.0%) is limited by the required amount of shared memory.    
+

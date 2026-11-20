@@ -1,0 +1,568 @@
+Running tests on device: NVIDIA GeForce RTX 3080
+Max shared memory per block: 49152 bytes
+Malloc heap size: 134217728 bytes
+============================================================
+Test Case #1 (rmsNorm)
+Data Type:      float
+Rows:           1
+Hidden Dim:     1
+Epsilon:        1e-05
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.220742 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #1 (rmsNorm)
+Data Type:      half
+Rows:           1
+Hidden Dim:     1
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.219007 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0050941
+Verification:   Passed
+============================================================
+Test Case #2 (rmsNorm)
+Data Type:      float
+Rows:           1
+Hidden Dim:     8
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.204367 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #2 (rmsNorm)
+Data Type:      half
+Rows:           1
+Hidden Dim:     8
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.201599 ms
+Max Diff:       0.0004855
+Max Tolerance:  0.0120239
+Verification:   Passed
+============================================================
+Test Case #3 (rmsNorm)
+Data Type:      float
+Rows:           2
+Hidden Dim:     16
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.203110 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #3 (rmsNorm)
+Data Type:      half
+Rows:           2
+Hidden Dim:     16
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.219909 ms
+Max Diff:       0.0015683
+Max Tolerance:  0.0293867
+Verification:   Passed
+============================================================
+Test Case #4 (rmsNorm)
+Data Type:      float
+Rows:           4
+Hidden Dim:     31
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.206539 ms
+Max Diff:       0.0000002
+Max Tolerance:  0.0001794
+Verification:   Passed
+============================================================
+Test Case #4 (rmsNorm)
+Data Type:      half
+Rows:           4
+Hidden Dim:     31
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.215712 ms
+Max Diff:       0.0010548
+Max Tolerance:  0.0268502
+Verification:   Passed
+============================================================
+Test Case #5 (rmsNorm)
+Data Type:      float
+Rows:           8
+Hidden Dim:     64
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.274059 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004280
+Verification:   Passed
+============================================================
+Test Case #5 (rmsNorm)
+Data Type:      half
+Rows:           8
+Hidden Dim:     64
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.222398 ms
+Max Diff:       0.0019345
+Max Tolerance:  0.0253417
+Verification:   Passed
+============================================================
+Test Case #6 (rmsNorm)
+Data Type:      float
+Rows:           16
+Hidden Dim:     128
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.344336 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004391
+Verification:   Passed
+============================================================
+Test Case #6 (rmsNorm)
+Data Type:      half
+Rows:           16
+Hidden Dim:     128
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.270311 ms
+Max Diff:       0.0019479
+Max Tolerance:  0.0257324
+Verification:   Passed
+============================================================
+Test Case #7 (rmsNorm)
+Data Type:      float
+Rows:           32
+Hidden Dim:     256
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.357089 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004312
+Verification:   Passed
+============================================================
+Test Case #7 (rmsNorm)
+Data Type:      half
+Rows:           32
+Hidden Dim:     256
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.342490 ms
+Max Diff:       0.0019426
+Max Tolerance:  0.0257325
+Verification:   Passed
+============================================================
+Test Case #8 (rmsNorm)
+Data Type:      float
+Rows:           64
+Hidden Dim:     512
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.405878 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0005014
+Verification:   Passed
+============================================================
+Test Case #8 (rmsNorm)
+Data Type:      half
+Rows:           64
+Hidden Dim:     512
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.380892 ms
+Max Diff:       0.0019531
+Max Tolerance:  0.0258301
+Verification:   Passed
+============================================================
+Test Case #9 (rmsNorm)
+Data Type:      float
+Rows:           128
+Hidden Dim:     1024
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.618403 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004648
+Verification:   Passed
+============================================================
+Test Case #9 (rmsNorm)
+Data Type:      half
+Rows:           128
+Hidden Dim:     1024
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.479711 ms
+Max Diff:       0.0019531
+Max Tolerance:  0.0262402
+Verification:   Passed
+============================================================
+Test Case #10 (rmsNorm)
+Data Type:      float
+Rows:           32
+Hidden Dim:     2048
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.487908 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004628
+Verification:   Passed
+============================================================
+Test Case #10 (rmsNorm)
+Data Type:      half
+Rows:           32
+Hidden Dim:     2048
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.409795 ms
+Max Diff:       0.0019493
+Max Tolerance:  0.0293848
+Verification:   Passed
+============================================================
+Test Case #11 (rmsNorm)
+Data Type:      float
+Rows:           8
+Hidden Dim:     4096
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.420051 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0004254
+Verification:   Passed
+============================================================
+Test Case #11 (rmsNorm)
+Data Type:      half
+Rows:           8
+Hidden Dim:     4096
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.383297 ms
+Max Diff:       0.0019526
+Max Tolerance:  0.0275488
+Verification:   Passed
+============================================================
+Test Case #12 (rmsNorm)
+Data Type:      float
+Rows:           3
+Hidden Dim:     769
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.334045 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #12 (rmsNorm)
+Data Type:      half
+Rows:           3
+Hidden Dim:     769
+Epsilon:        0.0000100
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.329913 ms
+Max Diff:       0.0019503
+Max Tolerance:  0.0288770
+Verification:   Passed
+============================================================
+Test Case #13 (rmsNorm)
+Data Type:      float
+Rows:           5
+Hidden Dim:     1536
+Epsilon:        0.0000010
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.353406 ms
+Max Diff:       0.0000014
+Max Tolerance:  0.0005279
+Verification:   Passed
+============================================================
+Test Case #13 (rmsNorm)
+Data Type:      half
+Rows:           5
+Hidden Dim:     1536
+Epsilon:        0.0000010
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.353729 ms
+Max Diff:       0.0019460
+Max Tolerance:  0.0267480
+Verification:   Passed
+============================================================
+Test Case #1 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.030364 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #1 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.030604 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #2 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.028381 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0009944
+Verification:   Passed
+============================================================
+Test Case #2 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.035238 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #3 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.034074 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0008412
+Verification:   Passed
+============================================================
+Test Case #3 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.036346 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #4 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.060368 ms
+Max Diff:       0.0000019
+Max Tolerance:  0.0008625
+Verification:   Passed
+============================================================
+Test Case #4 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.046254 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #5 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.095349 ms
+Max Diff:       0.0000019
+Max Tolerance:  0.0008818
+Verification:   Passed
+============================================================
+Test Case #5 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.067733 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #6 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       1.317870 ms
+Max Diff:       0.0000029
+Max Tolerance:  0.0008154
+Verification:   Passed
+============================================================
+Test Case #6 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.898224 ms
+Max Diff:       0.0078125
+Max Tolerance:  0.0453906
+Verification:   Passed
+============================================================
+Test Case #7 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.031674 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0009139
+Verification:   Passed
+============================================================
+Test Case #7 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.034249 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #8 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.037076 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0008792
+Verification:   Passed
+============================================================
+Test Case #8 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.037698 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #9 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.042395 ms
+Max Diff:       0.0000019
+Max Tolerance:  0.0008532
+Verification:   Passed
+============================================================
+Test Case #9 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.040885 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #10 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.059851 ms
+Max Diff:       0.0000019
+Max Tolerance:  0.0010009
+Verification:   Passed
+============================================================
+Test Case #10 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.046626 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #11 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.051589 ms
+Max Diff:       0.0000010
+Max Tolerance:  0.0009053
+Verification:   Passed
+============================================================
+Test Case #11 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.040158 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #12 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.081022 ms
+Max Diff:       0.0000019
+Max Tolerance:  0.0008379
+Verification:   Passed
+============================================================
+Test Case #12 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       0.055156 ms
+Max Diff:       0.0000000
+Max Tolerance:  0.0000000
+Verification:   Passed
+============================================================
+Test Case #13 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       5.545618 ms
+Max Diff:       0.0000038
+Max Tolerance:  0.0009958
+Verification:   Passed
+============================================================
+Test Case #13 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       4.546379 ms
+Max Diff:       0.0078125
+Max Tolerance:  0.0491406
+Verification:   Passed
+============================================================
+Test Case #14 (Attention)
+Data Type:      float
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       38.880551 ms
+Max Diff:       0.0000048
+Max Tolerance:  0.0008721
+Verification:   Passed
+============================================================
+Test Case #14 (Attention)
+Data Type:      half
+Warm-up Iters:  1
+Profile Iters:  10
+Avg Time:       25.709109 ms
+Max Diff:       0.0078125
+Max Tolerance:  0.0526172
+Verification:   Passed
+============================================================
